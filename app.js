@@ -13,6 +13,9 @@ app.use(methodOverride("_method"));
 const morgan = require("morgan");
 app.use(morgan("tiny"));
 
+// View Engine
+app.set("view engine", "pug");
+
 // Route Handling
 const { petRouter } = require("./routes");
 app.use("/pets", petRouter);

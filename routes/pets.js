@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {Pet} = require("./models");
+const {Pet} = require("../models");
 
 router
 	.route("")

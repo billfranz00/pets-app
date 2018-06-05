@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 
 mongoose
 	.connect("mongodb://localhost/pets-app", {
-		useMongoClient: true
+		// useMongoClient: true
 	})
 	.then(() => {
 		console.log("Pets App Connected To MongoDB");
