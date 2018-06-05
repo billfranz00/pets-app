@@ -1,0 +1,6 @@
+extends base.pug
+
+block content
+	a(href="/pets/new") Create a new pet
+	each pet in pets
+		p `Name ${pet.name}` | a(href=`/pets/${pet.id}/edit`) Edit
