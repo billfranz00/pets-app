@@ -29,7 +29,7 @@ app.get("/", (req, res, next) => {
 app.use((req, res, next) => {
 	const err = new Error("Page Not Found");
 	err.status = 404;
-	return net(err);
+	return next(err);
 });
 
 // Error Handling

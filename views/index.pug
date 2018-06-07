@@ -4,5 +4,7 @@ block content
 	a(href="/pets/new") Create a new pet
 	each pet in pets
 		//- p `Name ${pet.name}` | a(href=`/pets/${pet.id}/edit`) Edit
-		p Name #{pet.name} 
-			a(href=`/pets/${pet.id}/edit`) Edit
+		p Name: #{pet.name} 
+			a(href=`/pets/${pet.id}/edit`) Edit 
+			| or 
+			a(href=`/pets/${pet.id}`) See the pet's own page
