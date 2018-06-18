@@ -1,3 +1,4 @@
+// Express
 const express = require("express");
 const app = express();
 
@@ -17,8 +18,9 @@ app.use(morgan("tiny"));
 app.set("view engine", "pug");
 
 // Route Handling
-const { petRouter } = require("./routes");
-app.use("/pets", petRouter);
+const { ownerRouter, petRouter } = require("./routes");
+app.use("/owner", ownerRouter);
+app.use("/owner/:ownerId/pets", petRouter);
 
 // Homepage
 app.get("/", (req, res, next) => {

@@ -1,10 +1,10 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({ mergeParams: true});
 
-const {Pet} = require("../models");
+const { Owner, Pet } = require("../models");
 
 router
-	.route("")
+	.route("/")
 	.get((req, res, next) => {
 		return Pet.find().then(pets => {
 			return res.render("index", {pets});
@@ -21,7 +21,7 @@ router.route("/new").get((req, res, next) => {
 });
 
 router
-	.route("/:id")
+	.route("/:petId")
 	.get((req, res, next) => {
 		return Pet.findById(req.params.id).then(pet => {
 			return res.render("show", {pet});
@@ -38,7 +38,7 @@ router
 		});
 	});
 
-router.route("/:id/edit").get((req, res, next) => {
+router.route("/:petId/edit").get((req, res, next) => {
 	return Pet.findById(req.params.id).then(pet => {
 		return res.render("edit", {pet});
 	});
