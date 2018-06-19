@@ -9,4 +9,6 @@ const ownerSchema = new mongoose.Schema({
 	]
 });
 
-mongoose.exports = mongoose.model("Owner", ownerSchema);
+const Owner = mongoose.model("Owner", ownerSchema);
+
+module.exports = Owner;

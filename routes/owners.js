@@ -24,6 +24,7 @@ router
 	.route("/:ownerId")
 	.get((req, res, next) => {
 		return Owner.findById(req.params.id).then(owner => {
+			console.log(owner);
 			return res.render("show", {owner});
 		});
 	})

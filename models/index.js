@@ -14,4 +14,5 @@ mongoose
 		console.log("Error connecting Pets App to MongoDB", err);
 	});
 
+exports.Owner = require("./owner");
 exports.Pet = require("./pet");

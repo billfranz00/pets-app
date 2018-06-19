@@ -24,7 +24,7 @@ app.use("/owner/:ownerId/pets", petRouter);
 
 // Homepage
 app.get("/", (req, res, next) => {
-	return res.redirect("/pets");
+	return res.redirect("/owner");
 });
 
 // 404 Response

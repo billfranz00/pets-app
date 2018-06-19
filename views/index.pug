@@ -1,10 +1,10 @@
 extends base.pug
 
 block content
-	a(href="/pets/new") Create a new #{resource}
+	a(href="/owner/new") Create a new #{resource}
 	each owner in owners
 		//- p `Name ${pet.name}` | a(href=`/pets/${pet.id}/edit`) Edit
-		p Name: #{pet.name} 
-			a(href=`/pets/${pet.id}/edit`) Edit 
+		p Name: #{owner.name}: 
+			a(href=`/owner/${owner.id}/edit`) Edit 
 			| or 
-			a(href=`/pets/${pet.id}`) See the pet's own page
+			a(href=`/owner/${owner.id}`) See the owner's own page
