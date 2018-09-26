@@ -1,0 +1,11 @@
+extends ../base.pug
+
+block content
+	a(href="./pets/new") Add a new Pet
+	each pet in owner.pets
+		p `Name: ${pet.name}`
+		a(href=`/pets/${pet.id}/edit`) Edit the name of your pet
+		//- p Name: #{owner.name}: 
+		//- 	a(href=`/owner/${owner.id}/edit`) Edit 
+		//- 	| or 
+		//- 	a(href=`/owner/${owner.id}`) See the owner's own page

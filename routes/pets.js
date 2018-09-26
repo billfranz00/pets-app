@@ -6,7 +6,8 @@ const { Owner, Pet } = require("../models");
 router
 	.route("/")
 	.get((req, res, next) => {
-		return Owner.findById(req.params.owner_id)
+		console.log(req.params);
+		return Owner.findById(req.params.ownerId)
 			.populate("pets")
 			.exec()
 			.then(owner => {
@@ -31,14 +32,14 @@ router
 	});
 
 router.route("/new").get((req, res, next) => {
-	return res.render("new");
+	return res.render("pets/new");
 });
 
 router
 	.route("/:petId")
 	.get((req, res, next) => {
 		return Pet.findById(req.params.id).then(pet => {
-			return res.render("show", {pet});
+			return res.render("pets/show", {pet});
 		});
 	})
 	.patch((req, res, next) => {
@@ -54,7 +55,7 @@ router
 
 router.route("/:petId/edit").get((req, res, next) => {
 	return Pet.findById(req.params.id).then(pet => {
-		return res.render("edit", {pet});
+		return res.render("pets/edit", {pet});
 	});
 });
 
